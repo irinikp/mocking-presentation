@@ -24,3 +24,5 @@ No matching handler found for Mockery_0_Demo_Beta::doSomething('hello', 'world')
 Either the method was unexpected or its arguments
 matched no expected argument list for this method
 ```
+Note: 
+with arguments

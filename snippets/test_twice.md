@@ -17,3 +17,5 @@ Mockery\Exception\InvalidCountException: Method doSomething(<Any Arguments>)
 from Mockery_0_Demo_Beta should be called exactly 2 times
 but called 1 times.
 ```
+Note:
+twice
