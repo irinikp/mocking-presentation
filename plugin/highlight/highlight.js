@@ -1,6 +1,6 @@
 // START CUSTOM REVEAL.JS INTEGRATION
 (function() {
-	// Function to perform a better "data-trim" on code snippets
+	// Function to perform a better "data-trim" on code slides
 	// Will slice an indentation amount on each line of the snippet (amount based on the line having the lowest indentation length)
 	function betterTrim(snippetEl) {
 		// Helper functions

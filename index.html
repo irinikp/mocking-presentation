@@ -31,32 +31,22 @@
                 Irini Koutaki @DevStaff
             </textarea>
         </section>
-        <section data-markdown data-notes="We are going to see what is mocking and why do we need it in our testing. <br/>The we will see some example code and in the end some tools we can use">
-            - What/Why
-            - Example code
-            - Frameworks/Tools
+        <section data-markdown="slides/contents.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
         </section>
-        <section data-notes="A programmer typically creates a mock object to test the behavior of some other object, in much the same way that a car designer uses a crash test dummy to simulate the dynamic behavior of a human in vehicle impacts
-
-Mock objects have the same interface as the real objects they mimic, allowing a client object to remain unaware of whether it is using a real object or a mock object.">
-            <p>What?</p>
-            <p>Mock objects are simulated objects that mimic the behavior of real objects in controlled ways<br/>
-                - Wikipedia</p>
+        <section data-markdown="slides/what.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
         </section>
-        <section data-notes="Unit tests are short, quick, automated tests that make sure a specific part of your program works. Good unit tests run quickly and are isolated from other tests. Both these traits are difficult to achieve out of the box.
+        <section data-notes="Unit tests are short, quick and isolated tests that make sure a specific part of your program works.
+        Mocking helps us in speed and isolation
 
-You can mock an object that hasn't been implemented yet (for example I created this image based on a true story that could have been avoided)
+Mock an object because you can't wait for it to be implemented first
 
-It can help with designing your API by predicting behaviour and make designing changes accordingly, before actually start implementing it
-
-Fast testing when trying to connect to an API or a database. You WILL eventually test the connection, but in cases where you need to test something else and you have to integrate with the external sources, your tests will be faster">
+Helps make easy and cheap designing changes before actual implementation">
             <p>Why?</p>
             <div class="container">
                 <div class="col" data-markdown>
                     * Test isolation,
                     * Stand in for objects which do not yet exist
-                    * Exploratory design of class APIs without actual implementation
-                    * Speed
+                    * Exploratory design
                 </div>
                 <div class="col">
                     <img data-src="img/waiting_skeleton.jpg"/>
@@ -64,49 +54,31 @@ Fast testing when trying to connect to an API or a database. You WILL eventually
 
             </div>
         </section>
-        <section data-notes="Any developer could manually make a fake class by themselves and use this in the tests instead of the real one.
-
-However while the project grows, this solution will become a maintenance nightmare. Here are a couple of reasons why:
-
-When you add new methods intertwining with the existing object, then you also need to implement them on the fake one. Extra work without actual value.
-
-Or your fake object could accidentally perform real actions.
-
-As the number of tests increases the fake object will need to have more functionality, which may even need its own unit tests!">
-            <p>Why not stop at hand-rolled fakes?</p>
-            <p>The simple fake class created yesterday, becomes a maintenance nightmare today.</p>
+        <section data-markdown="slides/handrolled.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
         </section>
-        <section data-markdown>
-            Mocking frameworks perform three main functions:
-
-            * Create fake objects
-            * Set behavior on fake objects
-            * Verify methods were called
+        <section data-markdown="slides/actions.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
         </section>
         <section data-markdown>
             Example code
         </section>
-        <section data-markdown="snippets/setup_classes.md">
+        <section data-markdown="slides/setup_classes.md">
         </section>
-        <section data-markdown="snippets/test_once.md">
+        <section data-markdown="slides/test_once.md">
         </section>
-        <section data-markdown="snippets/test_twice.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
+        <section data-markdown="slides/test_twice.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
         </section>
-        <section data-markdown="snippets/test_with_args.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
+        <section data-markdown="slides/test_with_args.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
+        </section>
+        <section data-markdown="slides/partial.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
         </section>
         <section>
-            A class with dependency injection is much easier to test.
-        </section>
-        <section>
-            <section data-notes="A fake object helps us create the interface between the code we test and the code it depends on. It provides a safe, easy-to-change testbed. Because the thing we fake doesn't exist yet; so if it turns out to be awkward to specify the interaction, it is cheap to throw it away and re-try. So this phrase is used to determine that we write our tests to get a design feedback.
-
-Now in the case where we feel the need to mock a third party we don't own, we can't control that it won't change down the line. So we can take all those API calls, the things that interact with something we don't own and we isolate them behind a class that we do own (a wrapper). Then we could even create our own API (something more readable to us) and call this an adapter. And now that we have something we do own, we can mock it however we need to. But at some point you still need to write an integration test that hits that API make sure that everything works as expected">
-                "Don't mock what you don't own"</section>
-            <section data-markdown="snippets/cat_api_integrator.md">
+            <section data-markdown="slides/mock_what_u_own.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
             </section>
-            <section data-markdown="snippets/cat_controller.md">
+            <section data-markdown="slides/cat_api_integrator.md">
             </section>
-            <section data-markdown="snippets/cat_testing.md">
+            <section data-markdown="slides/cat_controller.md">
+            </section>
+            <section data-markdown="slides/cat_testing.md">
             </section>
         </section>
         <section>
@@ -156,11 +128,11 @@ Wilma – Service stub and transparent proxy, which allows to capture and analys
                 </div>
             </div>
         </section>
-        <section data-markdown>
-            ## Demo
+<!--        <section data-markdown>-->
+<!--            ## Demo-->
 
-            [mockapi.io](https://www.mockapi.io)
-        </section>
+<!--            [mockapi.io](https://www.mockapi.io)-->
+<!--        </section>-->
         <section data-markdown>
             Bibliography:
 
