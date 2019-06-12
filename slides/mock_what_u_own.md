@@ -11,3 +11,6 @@ the line. So we can take all those API calls, the things that interact with some
 behind a class that we do own (a wrapper). Then we could even create our own API (something more readable to us) and 
 call this an adapter. And now that we have something we do own, we can mock it however we need to. But at some point you 
 still need to write an integration test that hits that API make sure that everything works as expected
+
+For example, for anyone using Laravel, if you are familiar with Eloquent, this is an Active Record implementation that works
+with your database. You can't mock Eloquent, if you absolutely need to mock it, then you should create a wrapper for that. 
