@@ -1,10 +1,7 @@
-<p>What?</p>
-<p>Mock objects are simulated objects that mimic the behavior of real objects in controlled ways<br/>
-    - Wikipedia</p>
+<p>A **test double** is an object that stands in for a real object in a test</p>
+<p class="fragment fade-in" data-fragment-index="0">**Mock** is a type of test doube. </p>
+<p class="fragment fade-in" data-fragment-index="0" style="font-size: 0.8em">
+Objects pre-programmed with expectations which form a specification of the calls they are expected to receive. <br/>--Martin Fowler
+</p>
 
 Note:
-A mock object is created to test the behavior of some other object
-A car designer uses a crash test dummy to simulate the dynamic behavior of a human in vehicle impacts
-
-Mock objects have the same interface as the real objects they mimic
-Allow a client object to remain unaware of whether it is using a real object or a mock object.

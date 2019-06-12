@@ -1,7 +1,5 @@
 Why not stop at hand-rolled fakes?
 
-<img data-src="img/downward_spiral.jpg" style="background:none; border:none; box-shadow:none;"/>
-
 Note:
 Any developer could manually make a fake class
 
